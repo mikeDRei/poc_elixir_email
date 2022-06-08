@@ -1,17 +1,20 @@
-defmodule PocEmail.Shared.EmailServer do
-  use Bamboo.Phoenix, view: PocEmailWeb.UserView
-  use Bamboo.Mailer, otp_app: :poc_email
+defmodule PocEmailElixir.Shared.EmailServer do
+  use Bamboo.Phoenix, view: PocEmailElixirWeb.UserView
+  use Bamboo.Mailer, otp_app: :poc_email_elixir
   
   import Bamboo.Email
 
-def send_email_create_user(user) do
-  new_email()
-  |> from({"Michael","michaalvesreino@gmail.com"})
-  |> to(["Angel@gmail.com","douglas@gmail.com"])
-  |> subject("Welcome!!")
-  |> assign(:user, user)
-  |> render("create-user-email.html")
-  |> deliver_now()
-  |> IO.inspect()
+  def welcome_send_email(user) do
+    email_header(user)
+    |> assign(:user, user)
+    |> render("create-user-email.html")
+    |> deliver_now()
+  end
+
+  def email_header(user) do
+    new_email()
+    |> from({"michael",user.from})
+    |> to(user.to)
+    |> subject(user.subject)
   end
 end
