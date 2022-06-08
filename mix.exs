@@ -48,6 +48,8 @@ defmodule PocEmailElixir.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
+      {:bamboo, "~> 1.5"},
+      {:bamboo_smtp, "~> 3.0.0"},
       {:plug_cowboy, "~> 2.5"}
     ]
   end
