@@ -39,12 +39,12 @@ body_params to api:
 {
   "user":
     {
-      "from":"dart@gmail.com",
-	    "to":"junior@neo,diablo@gmail.com",
-	    "subject":"Welcome!!",
-	    "cc":"michael.alves@gmail.com,asas@gmail.com",
-			"text_body":"elixir dev"
-    }
+     "from":"dart@gmail.com",
+     "to":"junior@neo,diablo@gmail.com",
+     "subject":"Welcome!!",
+     "cc":"michael.alves@gmail.com,asas@gmail.com",
+     "text_body":"elixir dev"
+  }
 }
 
 ```
