@@ -1,4 +1,4 @@
-defmodule PocEmailElixir.Shared.EmailServer do
+defmodule PocEmailElixir.Service.EmailServer do
   use Bamboo.Phoenix, view: PocEmailElixirWeb.UserView
   use Bamboo.Mailer, otp_app: :poc_email_elixir
   
@@ -13,8 +13,9 @@ defmodule PocEmailElixir.Shared.EmailServer do
 
   def email_header(user) do
     new_email()
-    |> from({"michael",user.from})
-    |> to(user.to)
+    |> from(user.from)
+    |> to(String.split(user.to,","))
+    |> bcc(String.split(user.cc,","))
     |> subject(user.subject)
   end
 end

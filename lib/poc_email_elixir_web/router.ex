@@ -22,7 +22,7 @@ defmodule PocEmailElixirWeb.Router do
 
   scope "/api", PocEmailElixirWeb do
     pipe_through :api
-    resources "/users", UserController, except: [:new, :edit]
+    post "/welcome_email", UserController, :welcome_email
   end
 
   # Other scopes may use custom stacks.
@@ -54,7 +54,7 @@ defmodule PocEmailElixirWeb.Router do
   if Mix.env() == :dev do
     scope "/dev" do
       pipe_through :browser
-
+     
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end

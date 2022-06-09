@@ -47,23 +47,22 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :poc_email_elixir, PocEmailElixir.Shared.EmailServer,
+config :poc_email_elixir, PocEmailElixir.Service.EmailServer,
   adapter: Bamboo.SMTPAdapter,
   server: "smtp.ethereal.email",
   hostname: "smtp.ethereal.email",
   port: 587,
-  username: "jacey.hamill33@ethereal.email",
-  password: "gtSfMjJHCnMjWDjmv2", 
+  username: "",
+  password: "", 
   authentication: :plain,
   enable_starttls_auto: true,
   sandbox: false
 
   #Bamboo email Sendgrid
 
-  # config :poc_email_elixir, PocEmailElixir.Shared.EmailServer,
+  # config :poc_email_elixir, PocEmailElixir.Service.EmailServer,
   # adapter: Bamboo.SendGridAdapter,
-  # api_key: "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",
-  # sandbox: true
+  # api_key: ""
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
