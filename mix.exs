@@ -50,7 +50,8 @@ defmodule PocEmailElixir.MixProject do
       {:jason, "~> 1.2"},
       {:bamboo, "~> 1.5"},
       {:bamboo_smtp, "~> 3.0.0"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:ex_machina, "~> 2.7.0", only: :test}
     ]
   end
 
